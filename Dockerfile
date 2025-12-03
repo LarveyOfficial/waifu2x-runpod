@@ -13,5 +13,5 @@ RUN pip3 install -r requirements-torch.txt && \
     pip3 install -r requirements.txt && \
     python3 -m download_models.py &&
 
-
+CMD ["python3", "-u", "rp_handler.py"]
 
