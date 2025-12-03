@@ -62,7 +62,9 @@ def handler(event):
 
     base64_string = pil_image_to_base64(result, format="PNG")
 
-    return base64_string
+    formated_output = 'data:image/png;base64,' + base64_string
+
+    return formated_output
 
 
 
