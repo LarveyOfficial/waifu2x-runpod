@@ -4,12 +4,14 @@ MAINTAINER nagadomi <nagadomi@gmail.com>
 # install deps
 RUN apt-get update -y && apt-get install -y git-core python3-pip libmagickwand-dev libraqm-dev
 
-# install
-RUN git clone https://github.com/nagadomi/nunif.git /root/nunif && \
-    cd /root/nunif && \
-    pip3 install -r requirements-torch.txt && \
-    pip3 install -r requirements.txt && \
-    python3 -m waifu2x.download_models && \
-    python3 -m waifu2x.web.webgen.gen
+COPY . /root/waifu2x
 
-WORKDIR /root/nunif
+WORKDIR /root/waifu2x
+
+# install
+RUN pip3 install -r requirements-torch.txt && \
+    pip3 install -r requirements.txt && \
+    python3 -m download_models.py &&
+
+
+
