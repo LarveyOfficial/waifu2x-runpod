@@ -11,5 +11,5 @@ WORKDIR /root/waifu2x
 RUN pip3 install -r requirements.txt
 
 
-CMD ["python3", "-u", "rp_handler.py"]
+CMD ["python3", "-u", "handler.py"]
 

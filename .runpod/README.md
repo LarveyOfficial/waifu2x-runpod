@@ -1,5 +1,7 @@
 # [waifu2x](https://github.com/nagadomi/nunif/tree/master/waifu2x) - Runpod Serverless endpoint
 
+[![Runpod](https://api.runpod.io/badge/LarveyOfficial/waifu2x-runpod)](https://console.runpod.io/hub/LarveyOfficial/waifu2x-runpod)
+
 ---
 
 ## What is it?

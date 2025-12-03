@@ -1,0 +1,29 @@
+{
+  "tests": [
+    {
+      "name": "basic_image_upscale",
+      "input": {
+        "model_type": "art",
+        "image": "https://raw.githubusercontent.com/nihui/waifu2x-ncnn-vulkan/master/images/0.jpg",
+        "method": "scale4x",
+        "noise_level": 3,
+        "tile_size": 256,
+        "batch_size": 4
+      }
+    }
+  ],
+  "config": {
+    "gpuTypeId": "NVIDIA GeForce RTX 4090",
+    "gpuCount": 1,
+    "env": [
+      {
+        "key": "RUNTIME",
+        "value": "nvidia"
+      },
+      {
+        "key": "GPUS",
+        "value": "all"
+      }
+    ]
+  }
+}
