@@ -1,9 +1,5 @@
 import runpod
-import time
-import subprocess
-import sys
 import requests
-import base64
 import torch
 import base64
 from io import BytesIO
