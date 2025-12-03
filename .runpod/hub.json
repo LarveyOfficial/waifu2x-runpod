@@ -1,0 +1,26 @@
+{
+  "title": "waifu2x",
+  "description": "Image Super-Resolution for Anime-Style Art on Runpod!",
+  "type": "serverless",
+  "category": "image",
+  "iconUrl": "https://your-icon-url.com/icon.png",
+
+  "config": {
+    "runsOn": "GPU",
+    "containerDiskInGb": 20,
+
+    "gpuCount": 1,
+    "gpuIds": "AMPERE_16, AMPERE_24, ADA_24, AMPERE_48, ADA_48_PRO, AMPERE_80, ADA_80_PRO, HOPPER_141",
+
+    "env": [
+      {
+        "key": "RUNTIME",
+        "value": "nvidia"
+      },
+      {
+        "key": "GPUS",
+        "value": "all"
+      }
+    ]
+  }
+}

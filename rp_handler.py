@@ -53,7 +53,7 @@ def handler(event):
 
 
     input_image = Image.open("input_image.jpg")
-    result = model.infer(input_image)
+    result = model.infer(image)
 
     base64_string = pil_png_to_base64(result)
 

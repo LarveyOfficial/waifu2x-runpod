@@ -6,3 +6,4 @@ packaging
 runpod
 torch==2.7.1+cu128
 torchvision==0.22.1+cu128
+tqdm
