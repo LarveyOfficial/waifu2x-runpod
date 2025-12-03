@@ -2,8 +2,6 @@
 
 [![Runpod](https://api.runpod.io/badge/LarveyOfficial/waifu2x-runpod)](https://console.runpod.io/hub/LarveyOfficial/waifu2x-runpod)
 
----
-
 ## What is it?
 waifu2x is an Image Super-Resolution for Anime-Style Art created by [nagadomi](https://github.com/nagadomi).
 
