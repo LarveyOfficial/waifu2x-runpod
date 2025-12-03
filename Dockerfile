@@ -8,8 +8,7 @@ COPY . /root/waifu2x
 WORKDIR /root/waifu2x
 
 # install
-RUN pip3 install -r requirements-torch.txt && \
-    pip3 install -r requirements.txt
+RUN pip3 install -r requirements.txt
 
 
 CMD ["python3", "-u", "rp_handler.py"]
