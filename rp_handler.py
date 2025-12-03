@@ -4,19 +4,28 @@ import torch
 import base64
 from io import BytesIO
 from PIL import Image
+from urllib.parse import urlparse, unquote
+import os
 
-def download_image(url, filename):
+def download_image(url):
     try:
         response = requests.get(url, stream=True)
         response.raise_for_status()
+
+        parsed_url = urlparse(url)
+        filename = os.path.basename(unquote(parsed_url.path))
+        if not filename:
+            filename = "input_image"
 
         with open(filename, 'wb') as file:
             for chunk in response.iter_content(chunk_size=8192):
                 file.write(chunk)
         print(f"Image downloaded successfully to {filename}")
+        return filename
 
     except requests.exceptions.RequestException as e:
         print(f"Error downloading image: {e}")
+        return None
 
 
 def pil_png_to_base64(image_object):
@@ -39,7 +48,7 @@ def handler(event):
     keep_alpha = prompt_input.get('keep_alpha', True)
     amp = prompt_input.get('amp', True)
 
-    download_image(image, 'input_image.jpg')
+    input_filename = download_image(image)
 
     model = torch.hub.load("nagadomi/nunif:master", "waifu2x",
                            model_type=model_type,
@@ -51,9 +60,8 @@ def handler(event):
                            keep_alpha=keep_alpha,
                            amp=amp).to("cuda")
 
-
-    input_image = Image.open("input_image.jpg")
-    result = model.infer(image)
+    input_image = Image.open(input_filename)
+    result = model.infer(input_image)
 
     base64_string = pil_png_to_base64(result)
 
