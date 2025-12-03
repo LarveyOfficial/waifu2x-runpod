@@ -3,7 +3,7 @@
   "description": "Image Super-Resolution for Anime-Style Art on Runpod!",
   "type": "serverless",
   "category": "image",
-  "iconUrl": "https://your-icon-url.com/icon.png",
+  "iconUrl": "https://raw.githubusercontent.com/LarveyOfficial/waifu2x-runpod/refs/heads/main/.runpod/waifu2x.jpg",
 
   "config": {
     "runsOn": "GPU",
