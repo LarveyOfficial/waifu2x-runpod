@@ -1,5 +1,4 @@
 FROM nvidia/cuda:11.8.0-runtime-ubuntu22.04
-MAINTAINER nagadomi <nagadomi@gmail.com>
 
 # install deps
 RUN apt-get update -y && apt-get install -y git-core python3-pip libmagickwand-dev libraqm-dev
