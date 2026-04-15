@@ -9,7 +9,8 @@
         "noise_level": 3,
         "tile_size": 256,
         "batch_size": 4
-      }
+      },
+      "timeout": 300000
     }
   ],
   "config": {
